@@ -3,6 +3,7 @@
   <h1>Todo application</h1>
   <AddTodo
       @add-todo="addTodo"
+      v-bind:add-todo="addTodo"
   />
     <select v-model="filter">
       <option value="all">All</option>
