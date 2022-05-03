@@ -1,8 +1,13 @@
 <template>
   <div>
     <h2>Home pages</h2>
-    <img src="https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fnatworld.info%2Fo-prirode-dlja-shkoly%2Fpriroda-ona-takaya-raznaya&psig=
-    AOvVaw02edqa1qL-4zXaEqI588Gw&ust=1651524215416000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNiiwa2Vv_cCFQAAAAAdAAAAABAJ">
+    <img src="../assets/logo.png">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      A adipisci atque autem dolorum earum enim esse exercitationem hic id illum itaque magni molestiae
+      necessitatibus nisi nobis numquam placeat, possimus quaerat quas quibusdam rerum sequi tenetur unde
+      ut vel veniam vitae? Debitis dicta ea ex facere laboriosam natus suscipit velit vero.</p>
+
     <router-link to="/todos">Todos</router-link>
+
   </div>
 </template>

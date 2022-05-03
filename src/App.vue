@@ -1,30 +1,42 @@
 <template>
   <div id="app">
   <h1>Todo application</h1>
-  <AddTodo
-      @add-todo="addTodo"
-      v-bind:add-todo="addTodo"
-  />
+    <hr>
+
+    <AddTodo
+        @add-todo="addTodo"
+    />
     <select v-model="filter">
       <option value="all">All</option>
       <option value="completed">Completed</option>
       <option value="not-completed">Not Completed</option>
     </select>
-  <hr>
-<!--  <img alt="Vue logo" src="./assets/logo.png">-->
-<!--  <HelloWorld msg="Welcome to Your Vue.js App" count="0"/>-->
-  <loader v-if="isLoading"/>
-  <TodoList
-      v-else-if="filteredTodos.length"
-      v-bind:todos="filteredTodos"
-      @remove-todo="removeTodo"
-  />
+    <hr>
+    <!--  <img alt="Vue logo" src="./assets/logo.png">-->
+    <!--  <HelloWorld msg="Welcome to Your Vue.js App" count="0"/>-->
+    <loader v-if="isLoading"/>
+    <TodoList
+        v-else-if="filteredTodos.length"
+        v-bind:todos="filteredTodos"
+        @remove-todo="removeTodo"
+    />
     <p v-else>No Todos !!!</p>
-<!--    <router-view />-->
+
+  <router-view> </router-view>
   </div>
 </template>
 
 <script>
+//  import Todos from './view/Todos'
+//  import Home from "@/view/Home";
+//  export default {
+//   // name: 'App',
+//   components: {
+//     Home,
+//     Todos
+//   },
+// }
+
 // import HelloWorld from './components/HelloWorld.vue'
 import TodoList from './components/TodoList'
 import AddTodo from './components/AddTodo'
@@ -44,7 +56,7 @@ export default {
     }
   },
   mounted() {
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=3')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
         .then(response => response.json())
         .then(json =>{
           // setTimeout(() => {

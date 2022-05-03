@@ -1,3 +1,14 @@
+import { createRouter, createWebHashHistory} from "vue-router";
+ import Home from "./view/Home.vue"
+
+export default createRouter({
+        history: createWebHashHistory(),
+        routes: [
+        {patch: '/' , component: Home, alias:'/'},
+        {patch: '/Todos', component: () => import('./view/Todos.vue')}
+      ]
+})
+
 // import Vue from "vue";
 // import Router from "vue-router";
 // import Home from "./view/Home"

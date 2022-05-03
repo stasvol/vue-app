@@ -3,7 +3,7 @@
    <span v-bind:class="{done: todo.completed}">
      <input type="checkbox" v-on:change="todo.completed = !todo.completed">
      <strong>{{index + 1}}</strong>
-     {{todo.title}}
+     {{todo.title.toUpperCase()}}
 <!--     {{todo.title | uppercase}}-->
    </span>
     <button class="btn-rm" v-on:click="$emit('remove-todo', todo.id)">&times;</button>
@@ -21,7 +21,7 @@ export default {
   },
   filters: {
     uppercase(value) {
-       // return console.log(value)
+       // console.log(value)
       return value.toUpperCase()
     }
   }
@@ -38,7 +38,7 @@ export default {
  .btn-rm {
    background: #cb3b3b;
    color: #fff;
-   border-radius: 50%;
+   /*border-radius: 50%;*/
    font-weight: bold;
    cursor: pointer;
  }
