@@ -2,8 +2,19 @@
   <li>
    <span v-bind:class="{done: todo.completed}">
      <input type="checkbox" v-on:change="todo.completed = !todo.completed">
-     <strong>{{index + 1}}</strong>
-     {{todo.title.toUpperCase()}}
+     <strong class="size">{{index + 1}}</strong>
+<!--     {{uppercase(todo.title)}}-->
+<!--     Class-->
+     <span :class="!todo.completed ? 'primary' : 'danger' "><strong >{{index + 1}}</strong>{{uppercase(todo.title)}}</span>
+
+<!--     <span :class="{-->
+<!--       'primary': true,-->
+<!--        'danger': todo.title.length > 20-->
+<!--     }">{{uppercase(todo.title)}}</span>-->
+
+<!--          <span :class="['primary', {'bold':todo.title.length < 15}]">{{uppercase(todo.title)}}</span>-->
+
+<!--     {{todo.title}}-->
 <!--     {{todo.title | uppercase}}-->
    </span>
     <button class="btn-rm" v-on:click="$emit('remove-todo', todo.id)">&times;</button>
@@ -18,6 +29,12 @@ export default {
       require: true
     },
     index: Number
+  },
+  methods: {
+    uppercase(value) {
+      console.log(value)
+      return value.toUpperCase()
+    }
   },
   filters: {
     uppercase(value) {
@@ -48,4 +65,18 @@ export default {
  .done {
    text-decoration: line-through;
  }
+ .size {
+   margin-right: .5rem;
+ }
+ .primary {
+   color: #36af0e;
+ }
+ .danger {
+   color: #b41616;
+ }
+ .bold {
+   font-size: 2rem;
+   color: #0f938b;
+ }
+
 </style>

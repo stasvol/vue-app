@@ -22,7 +22,7 @@
     />
     <p v-else>No Todos !!!</p>
 
-  <router-view> </router-view>
+  <router-view></router-view>
   </div>
 </template>
 
