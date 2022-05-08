@@ -3,6 +3,7 @@
    <span v-bind:class="{done: todo.completed}">
      <input type="checkbox" v-on:change="todo.completed = !todo.completed">
      <strong class="size">{{index + 1}}</strong>
+
 <!--     {{uppercase(todo.title)}}-->
 <!--     Class-->
      <span :class="!todo.completed ? 'primary' : 'danger' "><strong >{{index + 1}}</strong>{{uppercase(todo.title)}}</span>
@@ -19,6 +20,7 @@
    </span>
     <button class="btn-rm" v-on:click="$emit('remove-todo', todo.id)">&times;</button>
   </li>
+
 </template>
 
 <script>
@@ -44,7 +46,13 @@ export default {
   }
 }
 </script>
+
 <style scoped>
+
+[v-cloak] {
+  display: none;
+}
+
  li {
    border: 1px solid #ccc;
    display: flex;
@@ -78,5 +86,6 @@ export default {
    font-size: 2rem;
    color: #0f938b;
  }
+
 
 </style>

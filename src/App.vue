@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
   <h1>Todo application</h1>
     <hr>
 
@@ -20,8 +20,9 @@
         v-bind:todos="filteredTodos"
         @remove-todo="removeTodo"
     />
-    <p v-else>No Todos !!!</p>
+    <p v-else style="color: #b41616">No Todos !!!</p>
 
+   <Example />
   <router-view></router-view>
   </div>
 </template>
@@ -41,6 +42,7 @@
 import TodoList from './components/TodoList'
 import AddTodo from './components/AddTodo'
 import Loader from './components/Loader'
+import Example from "@/view/Example";
 
 export default {
   name: 'App',
@@ -95,7 +97,8 @@ export default {
     // HelloWorld
     AddTodo,
     TodoList,
-    Loader
+    Loader,
+    Example
   },
 }
 </script>
@@ -109,4 +112,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+[v-cloak] {
+  display: none;
+}
+
 </style>

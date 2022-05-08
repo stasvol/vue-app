@@ -11,6 +11,7 @@
     <hr>
     <strong> Todos Counter: {{ todos.length }} </strong> | <i>Double: {{doubleTodoCount}} </i>
     <hr>
+
   </div>
 </template>
 

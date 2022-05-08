@@ -6,6 +6,7 @@
     }">{{title}}</h2>
     <input  type="text" v-model="title" v-on:keypress.enter="onSubmit"/>
     <button  type="submit">Add todo</button>
+
   </form>
 </template>
 <script>
